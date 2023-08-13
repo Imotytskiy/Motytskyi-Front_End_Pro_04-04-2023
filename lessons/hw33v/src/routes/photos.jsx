@@ -18,7 +18,7 @@ export default function Photos() {
               <td>{photo.title}</td>
               <td>{photo.id}</td>
               <td>
-                <NavLink className="new-contact" to="/">
+                <NavLink className="button-album" to="/">
                   ПОВЕРНУТИСЯ
                 </NavLink>
               </td>

@@ -27,7 +27,7 @@ export default function Albums() {
                 <td>
                   <NavLink
                     key={album.id}
-                    className="new-contact"
+                    className="button-album"
                     to={`/albums/${album.id}/photos`}
                   >
                     PHOTOS
