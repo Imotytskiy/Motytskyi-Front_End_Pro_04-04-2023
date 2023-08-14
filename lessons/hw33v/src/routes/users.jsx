@@ -14,7 +14,7 @@ export default function Users() {
           <table>
             <thead>
               <tr>
-                <th>Ім'я</th>
+                <th>Ім&#39;я</th>
                 <th>Прізвище</th>
                 <th>ID</th>
               </tr>
