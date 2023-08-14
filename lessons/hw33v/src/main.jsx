@@ -11,7 +11,8 @@ import { getPhotos } from "./services/getPhotos";
 
 const basename = import.meta.env.DEV
   ? "/"
-  : "/Motytskyi-Front_End_Pro_04-04-2023/lessons/hw33v/dist/";
+  : "/Motytskyi-Front_End_Pro_04-04-2023/";
+// : "/Motytskyi-Front_End_Pro_04-04-2023/lessons/hw33v/dist/";
 
 const router = createBrowserRouter(
   [
