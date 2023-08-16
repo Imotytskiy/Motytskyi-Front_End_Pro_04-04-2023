@@ -17,7 +17,8 @@ const FormSignup = () => (
           values.firstname.length < 2 ||
           values.firstname.length > 20
         ) {
-          errors.firstname = "Invalid name";
+          errors.firstname =
+            "Invalid name more 2 letters but less the 20 letters";
         }
 
         if (!values.email) {
@@ -41,7 +42,7 @@ const FormSignup = () => (
       }}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
+          alert("ПРОВАЛІДОВАНО: " + JSON.stringify(values, null, 2));
           setSubmitting(false);
         }, 400);
       }}
@@ -63,10 +64,10 @@ const FormSignup = () => (
             name="firstname"
             onChange={handleChange}
             onBlur={handleBlur}
-            value={values.name}
+            value={values.firstname}
           />
-          {errors.name && touched.name && (
-            <div className="error">{errors.name}</div>
+          {errors.firstname && touched.firstname && (
+            <div className="error">{errors.firstname}</div>
           )}
           <label htmlFor="email">E-mail</label>
           <input
