@@ -45,7 +45,7 @@ const FormSignup = () => (
             value={values.email}
           />
           {errors.email && touched.email && errors.email}
-          <label htmlFor="email">Ім'я</label>
+          <label htmlFor="email">EMAIL</label>
           <input
             id="email"
             type="password"
@@ -55,7 +55,7 @@ const FormSignup = () => (
             value={values.password}
           />
           {errors.password && touched.password && errors.password}
-          <label htmlFor="tel">Ім'я</label>
+          <label htmlFor="tel">телефон</label>
           <input
             id="tel"
             type="password"
