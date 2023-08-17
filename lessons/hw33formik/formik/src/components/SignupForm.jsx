@@ -86,6 +86,7 @@ const FormSignup = () => (
             id="tel"
             type="text"
             name="tel"
+            placeholder="тільки цифри та довжина 12"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.tel}
