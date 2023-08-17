@@ -78,6 +78,7 @@ const FormSignup = () => (
             id="email"
             type="email"
             name="email"
+            placeholder="imotytskiy@gmail.com"
             onChange={handleChange}
             onBlur={handleBlur}
             value={values.email}
