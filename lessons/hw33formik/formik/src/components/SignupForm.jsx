@@ -35,7 +35,11 @@ const FormSignup = () => (
           !/^[0-9]+$/i.test(String(values.tel)) ||
           String(values.tel).length !== 12
         ) {
-          errors.tel = "Тільки цифри та довжина 12";
+          errors.tel = errors.tel = (
+            <span>
+              Тільки цифри та довжина 12 телефон, ввели {values.tel.length}
+            </span>
+          );
         }
 
         return errors;
@@ -81,7 +85,7 @@ const FormSignup = () => (
           {errors.email && touched.email && (
             <div className="error">{errors.email}</div>
           )}
-          <label htmlFor="tel">телефон</label>
+          <label htmlFor="tel"></label>
           <input
             id="tel"
             type="text"
