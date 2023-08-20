@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import TodoList from "./components/TodoList";
+import Button from "./components/Button";
+import { v4 as uuid } from "uuid";
+import { useDispatch, useSelector } from "react-redux";
+import { addTodo, removeTodo } from "./store/store";
 
 function App() {
+  const todos = useSelector((state) => state.todos);
+  const dispatch = useDispatch();
+
+  const [inputValue, setInputValue] = useState("");
+
+  const buttonClick = () => {
+    if (inputValue.trim() === "") {
+      return;
+    }
+
+    const unique_id = uuid();
+    const newTodo = {
+      id: unique_id.slice(0, 8),
+      position: todos.length + 1,
+      completed: false,
+      title: inputValue,
+    };
+
+    dispatch(addTodo(newTodo));
+    setInputValue("");
+  };
+
+  const buttonDelClick = (id) => {
+    dispatch(removeTodo(id));
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="wrapper">
+        <h1>todo-list</h1>
+        <TodoList todos={todos} buttonDelClick={buttonDelClick} />
+      </div>
+      <div>
+        <Button
+          buttonClick={buttonClick}
+          inputValue={inputValue}
+          setInputValue={setInputValue}
+        />
+      </div>
+    </>
   );
 }
 
