@@ -1,5 +1,4 @@
 import React from "react";
-// import Button from "react-bootstrap/Button";
 
 export default function DelButton({ todo, buttonDelClick }) {
   const handleDeleteClick = () => {
@@ -11,7 +10,6 @@ export default function DelButton({ todo, buttonDelClick }) {
       <button onClick={handleDeleteClick} className="rm">
         &times;
       </button>
-      {/* <Button variant="danger">Danger</Button>{" "} */}
     </>
   );
 }
