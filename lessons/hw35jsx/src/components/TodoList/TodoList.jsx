@@ -1,5 +1,5 @@
 import React from "react";
-import TodoItem from "../TodoItem";
+import TodoItem from "../TodoItem/TodoItem";
 import styles from "./TodoList.module.css";
 
 export default function TodoList({ todos, buttonDelClick }) {

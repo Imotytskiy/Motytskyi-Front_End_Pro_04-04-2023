@@ -1,46 +1,36 @@
 import React from "react";
+import DelButton from "../DelButton";
+import { useDispatch } from "react-redux";
+import { toggleTodo } from "../../store/store";
+import styles from "./TodoItem.module.css";
 
-const Button = ({ buttonClick, inputValue, setInputValue }) => {
-  const styles = {
-    input: {
-      textAlign: "center",
-      padding: ".5rem 1rem",
-      border: "2px solid blue",
-      borderRadius: "5px",
-      marginLeft: "auto",
-      marginRight: "auto",
-      marginBottom: "100px",
-      width: "500px",
-    },
-    button: {
-      padding: ".5rem 1rem",
-      border: "2px solid blue",
-      borderRadius: "5px",
-      marginBottom: ".5rem",
-      width: "150px",
-    },
-    div: {
-      textAlign: "center",
-    },
-  };
-  const handleChange = (event) => {
-    setInputValue(event.target.value);
+export default function TodoItem({ todo, index, buttonDelClick }) {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(toggleTodo(todo.id));
   };
 
   return (
-    <div style={styles.div}>
-      <input
-        style={styles.input}
-        type="text"
-        value={inputValue}
-        onChange={handleChange}
-      />
-
-      <button style={styles.button} onClick={buttonClick}>
-        СПРАВА
-      </button>
-    </div>
+    <li className={styles.li}>
+      <label className={styles.label}>
+        <input
+          type="checkbox"
+          className={styles.input}
+          onClick={handleClick}
+          checked={todo.completed}
+          readOnly
+        />
+        <b>{index + 1}. </b>
+        <span
+          className={
+            todo.completed ? styles.inputTextCrossed : styles.inputText
+          }
+        >
+          {todo.title}
+        </span>
+      </label>
+      <DelButton todo={todo} buttonDelClick={buttonDelClick} />
+    </li>
   );
-};
-
-export default Button;
+}
