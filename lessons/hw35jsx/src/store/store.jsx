@@ -16,10 +16,13 @@ const todoSlice = createSlice({
         todo.completed = !todo.completed;
       }
     },
+    delTodo: (state, action) => {
+      return state.filter((todo) => todo.id !== action.payload);
+    },
   },
 });
 
-export const { addTodo, removeTodo, toggleTodo } = todoSlice.actions;
+export const { addTodo, removeTodo, toggleTodo, delTodo } = todoSlice.actions;
 
 const store = configureStore({
   reducer: {

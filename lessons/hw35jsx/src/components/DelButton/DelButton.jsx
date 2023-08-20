@@ -1,8 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { delTodo } from "../../store/store";
 
-export default function DelButton({ todo, buttonDelClick }) {
+export default function DelButton({ todo }) {
+  const dispatch = useDispatch();
+
   const handleDeleteClick = () => {
-    buttonDelClick(todo.id);
+    dispatch(delTodo(todo.id));
   };
 
   return (
