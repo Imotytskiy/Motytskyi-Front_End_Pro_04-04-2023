@@ -1,5 +1,5 @@
 import React from "react";
-import DelButton from "../DelButton";
+import DelButton from "../DelButton/DelButton";
 import { useDispatch } from "react-redux";
 import { toggleTodo } from "../../store/store";
 import styles from "./TodoItem.module.css";
