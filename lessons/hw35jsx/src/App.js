@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TodoList from "./components/TodoList";
+import TodoList from "./components/TodoList/TodoList";
 import Button from "./components/Button";
 import { v4 as uuid } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
