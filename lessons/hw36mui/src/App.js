@@ -4,19 +4,12 @@ import Button from "./components/Button/Button";
 import { v4 as uuid } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo, removeTodo } from "./store/store";
-import { ThemeProvider } from '@mui/material/styles';
-import { lightTheme, darkTheme } from './styles/lightdark';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [inputValue, setInputValue] = useState("");
-
+  const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
-  const todos = useSelector((state) => state.todos); // отримуємо todos з Redux store
 
-  const toggleTheme = () => {
-    setIsDarkMode(!isDarkMode);
-  };
+  const [inputValue, setInputValue] = useState("");
 
   const buttonClick = () => {
     if (inputValue.trim() === "") {
@@ -40,10 +33,7 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-      <button onClick={toggleTheme}>
-        Переключити на {isDarkMode ? 'світлу тему' : 'темну тему'}
-      </button>
+    <>
       <div className="wrapper">
         <h1>todo-list</h1>
         <TodoList todos={todos} buttonDelClick={buttonDelClick} />
@@ -55,7 +45,7 @@ function App() {
           setInputValue={setInputValue}
         />
       </div>
-      </ThemeProvider>
+    </>
   );
 }
 
