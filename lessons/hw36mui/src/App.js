@@ -5,6 +5,9 @@ import { v4 as uuid } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo, removeTodo } from "./store/store"; 
 import '@fontsource/roboto/400.css';
+import { ThemeProvider} from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { darkTheme } from "./afterdark";
 
 function App() {
   const todos = useSelector((state) => state.todos);
@@ -35,6 +38,8 @@ function App() {
 
   return (
     <>
+    <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
       <div className="wrapper">
         <h1>todo-list</h1>
         <TodoList todos={todos} buttonDelClick={buttonDelClick} />
@@ -46,6 +51,7 @@ function App() {
           setInputValue={setInputValue}
         />
       </div>
+      </ThemeProvider>
     </>
   );
 }
