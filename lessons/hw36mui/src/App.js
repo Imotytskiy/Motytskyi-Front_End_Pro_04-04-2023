@@ -1,14 +1,15 @@
+import '@fontsource/roboto/400.css';
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { v4 as uuid } from "uuid";
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Switch from '@mui/material/Switch';
+
 import TodoList from "./components/TodoList/TodoList";
 import ButtonAdd from "./components/Button/Button";
-import { v4 as uuid } from "uuid";
-import { useDispatch, useSelector } from "react-redux";
-import { addTodo, removeTodo } from "./store/store"; 
-import '@fontsource/roboto/400.css';
-import { ThemeProvider} from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
+import { addTodo, removeTodo } from "./store/store";
 import { lightTheme, darkTheme } from "./afterdark";
-import Button from '@mui/material/Button';
 
 function App() {
   const [inputValue, setInputValue] = useState("");
@@ -41,9 +42,11 @@ function App() {
   return (
     <>
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-    <Button color="primary" onClick={() => setIsDarkMode(!isDarkMode)}>
-        Toggle Theme
-      </Button>
+      ДЕНЬ
+            <Switch
+              checked={isDarkMode}
+              onClick={() => setIsDarkMode(!isDarkMode)}
+            /> НІЧ
       <CssBaseline />
       <div className="wrapper">
         <h1>todo-list</h1>
