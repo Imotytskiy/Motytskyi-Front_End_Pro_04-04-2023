@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Button.module.css";
 
-const Button = ({ buttonClick, inputValue, setInputValue }) => {
+const ButtonAdd = ({ buttonClick, inputValue, setInputValue }) => {
   const handleChange = (event) => {
     setInputValue(event.target.value);
   };
@@ -21,4 +21,4 @@ const Button = ({ buttonClick, inputValue, setInputValue }) => {
   );
 };
 
-export default Button;
+export default ButtonAdd;
