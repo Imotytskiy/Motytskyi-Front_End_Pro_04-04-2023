@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Button.module.css";
-
+import Button from '@mui/material/Button'; 
 const ButtonAdd = ({ buttonClick, inputValue, setInputValue }) => {
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -14,9 +14,9 @@ const ButtonAdd = ({ buttonClick, inputValue, setInputValue }) => {
         value={inputValue}
         onChange={handleChange}
       />
-      <button className={styles.button} onClick={buttonClick}>
+      <Button variant="contained" onClick={buttonClick}>
         СПРАВА
-      </button>
+      </Button>
     </div>
   );
 };
