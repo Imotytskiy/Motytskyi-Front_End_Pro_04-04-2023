@@ -7,13 +7,14 @@ import { addTodo, removeTodo } from "./store/store";
 import '@fontsource/roboto/400.css';
 import { ThemeProvider} from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { darkTheme } from "./afterdark";
+import { lightTheme, darkTheme } from "./afterdark";
+import Button from '@mui/material/Button';
 
 function App() {
+  const [inputValue, setInputValue] = useState("");
   const todos = useSelector((state) => state.todos);
   const dispatch = useDispatch();
 
-  const [inputValue, setInputValue] = useState("");
 
   const buttonClick = () => {
     if (inputValue.trim() === "") {
@@ -35,10 +36,14 @@ function App() {
   const buttonDelClick = (id) => {
     dispatch(removeTodo(id));
   };
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
     <>
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+    <Button color="primary" onClick={() => setIsDarkMode(!isDarkMode)}>
+        Toggle Theme
+      </Button>
       <CssBaseline />
       <div className="wrapper">
         <h1>todo-list</h1>
