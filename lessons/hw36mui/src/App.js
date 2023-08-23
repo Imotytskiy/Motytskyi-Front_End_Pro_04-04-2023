@@ -3,7 +3,7 @@ import TodoList from "./components/TodoList/TodoList";
 import ButtonAdd from "./components/Button/Button";
 import { v4 as uuid } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
-import { addTodo, removeTodo } from "./store/store";
+import { addTodo, removeTodo } from "./store/store"; 
 
 function App() {
   const todos = useSelector((state) => state.todos);
