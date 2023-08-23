@@ -16,8 +16,7 @@ code {
   margin: 0 auto;
   width: 650px;
 }
-.rm {
-  background: red;
-  borderradius: 50%;
-  color: aliceblue;
+.switcher{
+  float: right;
+  margin: 20px;
 }

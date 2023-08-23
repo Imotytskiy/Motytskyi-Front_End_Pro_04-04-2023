@@ -42,11 +42,14 @@ function App() {
   return (
     <>
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-      ДЕНЬ
-            <Switch
-              checked={isDarkMode}
-              onClick={() => setIsDarkMode(!isDarkMode)}
-            /> НІЧ
+    <div className='switcher'>
+  ДЕНЬ
+  <Switch
+    checked={isDarkMode}
+    onClick={() => setIsDarkMode(!isDarkMode)}
+  /> 
+  НІЧ
+</div>
       <CssBaseline />
       <div className="wrapper">
         <h1>todo-list</h1>
