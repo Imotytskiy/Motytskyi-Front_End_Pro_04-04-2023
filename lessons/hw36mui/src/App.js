@@ -4,6 +4,7 @@ import ButtonAdd from "./components/Button/Button";
 import { v4 as uuid } from "uuid";
 import { useDispatch, useSelector } from "react-redux";
 import { addTodo, removeTodo } from "./store/store"; 
+import '@fontsource/roboto/400.css';
 
 function App() {
   const todos = useSelector((state) => state.todos);
