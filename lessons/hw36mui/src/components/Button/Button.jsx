@@ -8,17 +8,22 @@ const ButtonAdd = ({ buttonClick, inputValue, setInputValue }) => {
   };
 
   return (
-    <div className={styles.div}>
-      <TextField
-        // className={styles.input}
-        type="text" 
-        value={inputValue}
-        onChange={handleChange}
-      />
-      <Button size="large"  variant="contained" onClick={buttonClick}>
-        СПРАВА
-      </Button>
-    </div>
+    <div className={styles.container}>
+  <TextField 
+    className={styles.inputStyle}
+    type="text" 
+    value={inputValue}
+    onChange={handleChange}
+  />
+  <Button 
+    style={{ marginLeft: '10px' }}
+    size="large"  
+    variant="contained" 
+    onClick={buttonClick}
+  >
+    СПРАВА
+  </Button>
+</div>
   );
 };
 
