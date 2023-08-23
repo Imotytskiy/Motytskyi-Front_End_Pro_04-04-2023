@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { delTodo } from "../../store/store";
+import Button from '@mui/material/Button'; 
 
 export default function DelButton({ todo }) {
   const dispatch = useDispatch();
@@ -11,9 +12,9 @@ export default function DelButton({ todo }) {
 
   return (
     <>
-      <button onClick={handleDeleteClick} className="rm">
-        &times;
-      </button>
+      <Button variant="outlined" color="error" onClick={handleDeleteClick}>
+        ВИДАЛИТИ
+      </Button>
     </>
   );
 }
