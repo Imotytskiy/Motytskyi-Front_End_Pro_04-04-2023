@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Button.module.css";
-import Button from '@mui/material/Button'; 
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 const ButtonAdd = ({ buttonClick, inputValue, setInputValue }) => {
   const handleChange = (event) => {
     setInputValue(event.target.value);
@@ -8,13 +9,13 @@ const ButtonAdd = ({ buttonClick, inputValue, setInputValue }) => {
 
   return (
     <div className={styles.div}>
-      <input
-        className={styles.input}
-        type="text"
+      <TextField
+        // className={styles.input}
+        type="text" 
         value={inputValue}
         onChange={handleChange}
       />
-      <Button variant="contained" onClick={buttonClick}>
+      <Button size="large"  variant="contained" onClick={buttonClick}>
         СПРАВА
       </Button>
     </div>
