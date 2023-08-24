@@ -9,7 +9,7 @@ import Switch from '@mui/material/Switch';
 import TodoList from "./components/TodoList/TodoList";
 import ButtonAdd from "./components/Button/Button";
 import { addTodo, removeTodo } from "./store/store";
-import { lightTheme, darkTheme } from "./afterdark";
+import { lightTheme, darkTheme } from "./theme/afterdark";
 
 function App() {
   const [inputValue, setInputValue] = useState("");
