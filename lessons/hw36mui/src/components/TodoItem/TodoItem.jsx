@@ -27,7 +27,6 @@ export default function TodoItem({ todo, index, buttonDelClick }) {
         <ListItemIcon>
           <Checkbox
             checked={todo.completed}
-            onChange={handleClick}
             color="secondary"
             inputProps={{ 'aria-label': 'controlled' }}
           />
