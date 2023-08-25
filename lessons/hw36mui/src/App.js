@@ -25,7 +25,6 @@ function App() {
     const unique_id = uuid();
     const newTodo = {
       id: unique_id.slice(0, 8),
-      position: todos.length + 1,
       completed: false,
       title: inputValue,
     };
