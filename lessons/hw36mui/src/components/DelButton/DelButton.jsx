@@ -6,9 +6,11 @@ import Button from '@mui/material/Button';
 export default function DelButton({ todo }) {
   const dispatch = useDispatch();
 
-  const handleDeleteClick = () => {
+  const handleDeleteClick = (event) => {
+    event.stopPropagation();
     dispatch(delTodo(todo.id));
   };
+
 
   return (
     <>
