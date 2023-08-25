@@ -6,7 +6,7 @@ import Checkbox from '@mui/material/Checkbox';
 import { ListItem, ListItemIcon, ListItemButton, IconButton } from "@mui/material";
 import styles from './TodoItem.module.css'
 
-export default function TodoItem({ todo, index, buttonDelClick }) {
+export default function TodoItem({ todo, index}) {
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -18,7 +18,7 @@ export default function TodoItem({ todo, index, buttonDelClick }) {
       onClick={handleClick}
       secondaryAction={
         <IconButton edge="end" aria-label="comments">
-          <DelButton todo={todo} buttonDelClick={buttonDelClick} />
+          <DelButton todo={todo} />
         </IconButton>
       }
       disablePadding
