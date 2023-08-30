@@ -21,7 +21,7 @@ export default function TodoItem({ todo, index}) {
           <DelButton todo={todo} />
         </IconButton>
       }
-      disablePadding
+      disablePadding 
     >
       <ListItemButton role={undefined} dense>
         <ListItemIcon>
